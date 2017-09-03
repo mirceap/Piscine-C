@@ -53,7 +53,7 @@ int	compare(char *tab, char *first_line,int index_of_last_nl, int size_of_first)
 	int i;
 
 	i = 0;
-	printf("\n%c\n", tab[index_of_last_nl]);
+	printf("\n%c\n", tab[index_of_last_nl + 1]);
 	if (tab[i] == 'o')
 		return (0);
 	else if (tab[i] == '/')
@@ -75,8 +75,8 @@ int	main(int argc, char **argv)
 	int	index_of_last;
 	int 	size_of_tab;
 	int	size_of_first;
-	char	tab[100];
-	char	first_line[50];
+	char	tab[10000];
+	char	first_line[5000];
 
 	i = 0;
 	no_of_lines = 0;
@@ -98,6 +98,6 @@ int	main(int argc, char **argv)
 	index_of_last_new_line(tab, &index_of_last,size_of_tab);
 	
 	printf("Last index of new line:%i\n", index_of_last);
-	printf("Compare res: %i\n", compare(tab, first_line, size_of_first * (i - 1) , size_of_first));
+	printf("Compare res: %i\n", compare(tab, first_line, index_of_last + 1 , size_of_first));
 	return (0);
 }
