@@ -6,14 +6,16 @@
 /*   By: dhudema <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/03 16:20:00 by dhudema           #+#    #+#             */
-/*   Updated: 2016/09/03 17:00:15 by dhudema          ###   ########.fr       */
+/*   Updated: 2017/09/03 21:32:10 by mpavel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdlib.h>
 void	colle(int x, int y);
 
-int		main(void)
+int		main(int argc, char **argv)
 {
-	colle(5, 5);
+	if (argc < 2)
+		return (0);
+	colle(atoi(argv[1]), atoi(argv[2]));
 	return (0);
 }
